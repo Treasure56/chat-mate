@@ -1,3 +1,3 @@
 git add .
-git commit -m "ai chatbot app"
+git commit -m "chat page"
 git push origin dev
