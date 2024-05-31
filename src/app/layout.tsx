@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import ThemeProvider from "@/components/ThemeProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,13 +17,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <ThemeProvider>
       <body
-        className={`${inter.className}  bg-light dark:bg-dark text-dark dark:text-light `}
+        className={`${inter.className} min-h-screen bg-light dark:bg-dark text-dark dark:text-light `}
       >
         <Navbar />
         {children}
       </body>
-    </html>
+    </ThemeProvider>
   );
 }

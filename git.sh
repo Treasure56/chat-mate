@@ -1,3 +1,3 @@
 git add .
-git commit -m "chat page"
+git commit -m "fixed search input"
 git push origin dev

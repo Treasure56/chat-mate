@@ -4,6 +4,7 @@ import { RiSendPlaneFill } from "react-icons/ri";
 import ChatInput from "./ChatInput";
 import ChatBubble from "./ChatBubble";
 import { useChat } from "ai/react";
+import { useEffect } from "react";
 
 export type ChatPageProps = {
   userName: string;
@@ -14,8 +15,17 @@ export default function ChatPage({ userName }: ChatPageProps) {
     api: "/api/ai",
   });
 
+  useEffect(() => {
+    setTimeout(() => {
+      window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: "smooth",
+      });
+    }, 500);
+  }, [messages]);
+
   return (
-    <section className="flex flex-col justify-center items-center app-container py-12  overflow-hidden">
+    <section className="flex flex-col justify-center items-center app-container py-12  overflow-hidden h-fit">
       {messages.length == 0 && (
         <div className=" flex flex-col items-center justify-center">
           <h1 className="text-dark dark:text-light text-6xl font-semibold max-w-[450px] text-center mb-4">

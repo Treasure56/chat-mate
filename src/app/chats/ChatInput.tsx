@@ -1,5 +1,5 @@
 import { ChatRequestOptions } from "ai";
-import { ChangeEvent, FormEvent, useRef, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useRef, useState } from "react";
 import { RiSendPlaneFill } from "react-icons/ri";
 export type ChatInputProps = {
   onChange: (
@@ -14,11 +14,8 @@ export type ChatInputProps = {
 export default function ChatInput({ onChange, onSubmit }: ChatInputProps) {
   function handleChange(p: any) {
     onChange(p);
-    if (p.target.value.toString().endsWith("\n")) {
-      formRef.current?.requestSubmit();
-      ref.current!.value = "";
-    }
   }
+
   const ref = useRef<HTMLTextAreaElement>(null);
   const formRef = useRef<HTMLFormElement>(null);
 
@@ -30,6 +27,12 @@ export default function ChatInput({ onChange, onSubmit }: ChatInputProps) {
         ref={formRef}
       >
         <textarea
+          onKeyUp={(e) => {
+            if (e.key === "Enter") {
+              formRef.current?.requestSubmit();
+              ref.current!.value = "";
+            }
+          }}
           onChange={handleChange}
           rows={1}
           ref={ref}

@@ -11,4 +11,7 @@
   .btn-primary {
     @apply bg-primary-light hover:bg-primary-dark dark:bg-primary-dark text-white font-bold py-3 px-4  items-center justify-center rounded-md inline-flex gap-2;
   }
+  * {
+    @apply transition-colors duration-300;
+  }
 }
