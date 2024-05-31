@@ -5,7 +5,11 @@ import ChatInput from "./ChatInput";
 import ChatBubble from "./ChatBubble";
 import { useChat } from "ai/react";
 
-export default function ChatPage() {
+export type ChatPageProps = {
+  userName: string;
+};
+
+export default function ChatPage({ userName }: ChatPageProps) {
   const { messages, input, handleInputChange, handleSubmit } = useChat({
     api: "/api/ai",
   });
@@ -29,12 +33,12 @@ export default function ChatPage() {
           <ChatBubble
             key={message.id}
             message={message.content}
-            sender={message.role == "user" ? "userName" : "ai"}
+            sender={message.role == "user" ? userName : "ai"}
             isMe={message.role == "user"}
           />
         ))}
       </div>
-      <div className="p-8"></div>
+      <div className="p-8 dark:text-light"></div>
       <ChatInput onSubmit={handleSubmit} onChange={handleInputChange} />
     </section>
   );
