@@ -1,16 +1,23 @@
+"use client";
+
 import { create } from "zustand";
+type ThemeMode = "light" | "dark";
 export type ThemeState = {
-  theme: "light" | "dark";
+  theme: ThemeMode;
   toggleTheme: () => void;
 };
 
 export const useThemeState = create<ThemeState>((set) => {
   return {
-    theme: "light",
+    theme:
+      (localStorage && (localStorage.getItem("theme") as ThemeMode)) ?? "light",
     toggleTheme: () => {
       set((old) => {
-        if (old.theme == "light") return { theme: "dark" };
-        return { theme: "light" };
+        let t: { theme: ThemeMode };
+        if (old.theme == "light") t = { theme: "dark" };
+        else t = { theme: "light" };
+        localStorage.setItem("theme", t.theme);
+        return t;
       });
     },
   };

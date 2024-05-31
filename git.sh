@@ -1,3 +1,3 @@
 git add .
-git commit -m "fixed search input"
+git commit -m "Added: light mode and dark mode"
 git push origin dev

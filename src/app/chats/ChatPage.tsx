@@ -27,7 +27,7 @@ export default function ChatPage({ userName }: ChatPageProps) {
   return (
     <section className="flex flex-col justify-center items-center app-container py-12  overflow-hidden h-fit">
       {messages.length == 0 && (
-        <div className=" flex flex-col items-center justify-center">
+        <div className=" flex flex-col items-center justify-center pt-20">
           <h1 className="text-dark dark:text-light text-6xl font-semibold max-w-[450px] text-center mb-4">
             Your Personal AI Advisor
           </h1>
@@ -38,7 +38,7 @@ export default function ChatPage({ userName }: ChatPageProps) {
           </p>
         </div>
       )}
-      <div className=" flex flex-col gap-1 w-full max-w-[600px]">
+      <div className=" flex flex-col gap-1 w-full max-w-[600px] pt-6">
         {messages.map((message) => (
           <ChatBubble
             key={message.id}
