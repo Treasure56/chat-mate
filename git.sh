@@ -1,3 +1,3 @@
 git add .
-git commit -m "Added: light mode and dark mode"
+git commit -m "Added: terms and condition page"
 git push origin dev
