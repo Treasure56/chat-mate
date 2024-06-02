@@ -1,13 +1,16 @@
 "use client";
 
-import { useThemeState } from "@/store/themeStore";
-import { ReactNode } from "react";
+import { ThemeMode, useThemeState } from "@/store/themeStore";
+import { ReactNode, useLayoutEffect } from "react";
 
 export type ThemeProviderProps = {
   children: ReactNode;
 };
 export default function ThemeProvider({ children }: ThemeProviderProps) {
-  const { theme } = useThemeState();
+  const { theme, setTheme } = useThemeState();
+  useLayoutEffect(() => {
+    setTheme((localStorage.getItem("theme") ?? "light") as ThemeMode);
+  }, []);
   return (
     <html lang="en" className={theme}>
       {children}

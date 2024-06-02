@@ -9,7 +9,9 @@ export default function ThemeToggle() {
   return (
     <button
       className="inline-flex p-2 rounded-md border text-xl dark:text-light"
-      onClick={toggleTheme}
+      onClick={() => {
+        toggleTheme();
+      }}
     >
       {theme == "light" ? <FaRegMoon /> : <LuSunMoon />}
     </button>
