@@ -21,7 +21,7 @@ export default function HomeForm() {
           <input type="checkbox" name="checked" required />
           <p>
             Agree in our
-            <Link href={paths.termAndConditions}>terms and conditions</Link>
+            <Link href={paths.termAndConditions}> terms and conditions</Link>
           </p>
         </div>
         <FormButton className="btn-primary">

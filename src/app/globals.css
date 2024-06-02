@@ -6,7 +6,7 @@
     @apply px-5 sm:px-7 md:px-10 lg:px-16;
   }
   .input {
-    @apply py-3 px-4 border rounded-md outline-primary-light dark:outline-primary-dark;
+    @apply py-3 px-4 border rounded-md outline-primary-light dark:outline-primary-dark dark:text-dark;
   }
   .btn-primary {
     @apply bg-primary-light hover:bg-primary-dark dark:bg-primary-dark text-white font-bold py-3 px-4  items-center justify-center rounded-md inline-flex gap-2;
