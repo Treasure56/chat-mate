@@ -28,7 +28,7 @@ export default function ChatPage({ userName }: ChatPageProps) {
     <section className="flex flex-col justify-center items-center app-container py-12  overflow-hidden h-fit">
       {messages.length == 0 && (
         <div className=" flex flex-col items-center justify-center pt-20">
-          <h1 className="text-dark dark:text-light text-6xl font-semibold max-w-[700px] text-center mb-4">
+          <h1 className="text-dark dark:text-light text-2xl md:text-6xl font-semibold max-w-[700px]  text-center mb-4">
             Welcome to ChatMate, {userName}!
           </h1>
           <p className="text-dark dark:text-light max-w-[700px] text-center mb-8 px-4">

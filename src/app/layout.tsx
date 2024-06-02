@@ -6,9 +6,7 @@ import ThemeProvider from "@/components/ThemeProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 const title = "ChatMate";
-const description = `your intelligent AI assistant, providing seamless
-            conversations, instant support, and insightful interactions powered
-            by advanced language models`;
+const description = `your intelligent AI assistant, providing seamlessconversations, instant support, and insightful interactions powered by advanced language models`;
 
 export const metadata: Metadata = {
   title,
@@ -21,7 +19,7 @@ export const metadata: Metadata = {
     siteName: "ai chat",
     images: [
       {
-        url: "https://treasure56.vercel.app/images/chatai.png",
+        url: "https://chatmate-ai.vercel.app/images/chatai.png",
       },
     ],
   },
