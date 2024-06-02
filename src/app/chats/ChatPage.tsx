@@ -28,13 +28,12 @@ export default function ChatPage({ userName }: ChatPageProps) {
     <section className="flex flex-col justify-center items-center app-container py-12  overflow-hidden h-fit">
       {messages.length == 0 && (
         <div className=" flex flex-col items-center justify-center pt-20">
-          <h1 className="text-dark dark:text-light text-6xl font-semibold max-w-[450px] text-center mb-4">
-            Your Personal AI Advisor
+          <h1 className="text-dark dark:text-light text-6xl font-semibold max-w-[700px] text-center mb-4">
+            Welcome to ChatMate, {userName}!
           </h1>
           <p className="text-dark dark:text-light max-w-[700px] text-center mb-8 px-4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. A iure
-            mollitia aliquid. Soluta ex quaerat quibusdam sapiente alias
-            repudiandae ea nesciunt nemo, voluptate maxime.
+            I&apos;m here to help you with any questions or topics you&apos;d
+            like to discuss. Go ahead
           </p>
         </div>
       )}

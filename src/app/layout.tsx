@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     siteName: "ai chat",
     images: [
       {
-        url: "https://treasure56.vercel.app/images/chatmate.png",
+        url: "https://treasure56.vercel.app/images/chatai.png",
       },
     ],
   },

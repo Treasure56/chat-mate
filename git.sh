@@ -1,3 +1,3 @@
 git add .
-git commit -m "Added: terms and condition page"
+git commit -m "updated: chatpage"
 git push origin dev
