@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description,
   openGraph: {
     type: "website",
-    url: "https://example.com",
+    url: "https://chatmate-ai.vercel.app",
     title,
     description,
     siteName: "ai chat",

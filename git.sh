@@ -1,3 +1,3 @@
 git add .
-git commit -m "updated: chatpage"
+git commit -m "added: open grapgh"
 git push origin dev
