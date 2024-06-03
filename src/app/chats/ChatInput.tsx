@@ -36,7 +36,7 @@ export default function ChatInput({ onChange, onSubmit }: ChatInputProps) {
           onChange={handleChange}
           rows={1}
           ref={ref}
-          className="input p-4  shadow mb-4 w-full dark:bg-dark  dark: text-light "
+          className="input p-4  shadow mb-4 w-full text-dark dark:bg-dark  dark:text-light "
           placeholder="Type your message here..."
         />
         <button className=" p-4 absolute top-0 right-0">
