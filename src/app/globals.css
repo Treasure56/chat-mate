@@ -12,11 +12,12 @@
     @apply bg-primary-light hover:bg-primary-dark dark:bg-primary-dark text-white font-bold py-3 px-4  items-center justify-center rounded-md inline-flex gap-2;
   }
   * {
-    @apply transition-colors duration-300;
+    @apply transition-colors duration-100;
   }
 }
 body {
-  height: calc(100vh - env(safe-area-inset-bottom));
-  min-height: 100% !important;
-  max-height: 100% !important;
+  height: calc(100dvh - env(safe-area-inset-bottom)) !important;
+  max-height: calc(100dvh - env(safe-area-inset-bottom)) !important;
+  /* min-height: 100% !important; */
+  /* max-height: 100% !important; */
 }
