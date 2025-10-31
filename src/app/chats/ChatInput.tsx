@@ -38,6 +38,7 @@ export default function ChatInput({ onChange, onSubmit }: ChatInputProps) {
           ref={ref}
           className="input p-4  shadow mb-4 w-full text-dark dark:bg-dark  dark:text-light "
           placeholder="Type your message here..."
+          name="prompt"
         />
         <button className=" p-4 absolute top-0 right-0">
           <RiSendPlaneFill className="" />

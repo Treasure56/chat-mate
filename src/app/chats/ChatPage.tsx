@@ -3,16 +3,18 @@
 import { RiSendPlaneFill } from "react-icons/ri";
 import ChatInput from "./ChatInput";
 import ChatBubble from "./ChatBubble";
-import { useChat } from "ai/react";
-import { useEffect } from "react";
+import { FormEvent, useEffect } from "react";
+import { useChat } from "@ai-sdk/react";
 
 export type ChatPageProps = {
   userName: string;
 };
 
 export default function ChatPage({ userName }: ChatPageProps) {
-  const { messages, input, handleInputChange, handleSubmit } = useChat({
-    api: "/api/ai",
+  const { messages, sendMessage } = useChat({
+    // transport: {
+    // api: "/api/ai",
+    // }
   });
 
   useEffect(() => {
@@ -23,6 +25,15 @@ export default function ChatPage({ userName }: ChatPageProps) {
       });
     }, 500);
   }, [messages]);
+
+  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const input = formData.get("prompt") as string;
+    sendMessage({
+      text: input,
+    });
+  }
 
   return (
     <section className="flex flex-col justify-center items-center app-container py-12  overflow-hidden h-fit">
@@ -41,14 +52,16 @@ export default function ChatPage({ userName }: ChatPageProps) {
         {messages.map((message) => (
           <ChatBubble
             key={message.id}
-            message={message.content}
+            message={message.parts
+              .map((part) => (part.type === "text" ? part.text : ""))
+              .join("")}
             sender={message.role == "user" ? userName : "ai"}
             isMe={message.role == "user"}
           />
         ))}
       </div>
       <div className="p-8 dark:text-light"></div>
-      <ChatInput onSubmit={handleSubmit} onChange={handleInputChange} />
+      <ChatInput onSubmit={handleSubmit} onChange={() => {}} />
     </section>
   );
 }

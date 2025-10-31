@@ -9,7 +9,7 @@ export type ChatBubbleProps = {
 };
 export default function ChatBubble({ isMe, message, sender }: ChatBubbleProps) {
   return (
-    <div className="rounded-lg  p-2 bg-slate-200 dark:text-light dark:bg-[#101010]">
+    <div className="rounded-lg  p-2 bg-slate-200 dark:text-light dark:bg-[#101010] whitespace-pre-wrap">
       <div className={`${isMe ? "justify-end " : "justify-start"} flex gap-4`}>
         <p className="font-bold "> {sender}</p>
       </div>
